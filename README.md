@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Dmitrii Selifonov's final project
 
 #### Dependencies
