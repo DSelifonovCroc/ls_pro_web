@@ -1,9 +1,13 @@
 $font-color: white;
 $green-main: #4E8839;
 $green-secondary: #729E19;
+$milk-bg: #faf8f0;
 
 $buttons-green: #629055;
 $buttons-green-hover: #498039;
 
-
 $font-size-main: 16px;
+
+@mixin green-main-rgba-background($opacity){
+    background-color: rgba(78, 136, 57, $opacity);
+}

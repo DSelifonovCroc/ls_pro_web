@@ -1,0 +1,26 @@
+@import "_vars";
+
+.header{
+  background-image: url("/assets/images/bcg-h.png");  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;  
+  color: $font-color;
+
+  .header__top-row{
+    .header-socials{
+
+      .icon{
+        fill: white;
+        &:hover{
+            fill: $buttons-green-hover;
+        }
+      }
+    }
+  }
+
+  .header__title-row{
+    text-align: center;
+  }
+}

@@ -12,5 +12,8 @@ html
         link(rel='stylesheet' href='/assets/styles/index.min.css')
         script(src='/assets/scripts/bundle.js' defer)
     body
+        block header
+            include parts/header
         block content
-        
+        block footer
+            include parts/footer

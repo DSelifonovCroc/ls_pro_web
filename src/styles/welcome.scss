@@ -6,6 +6,10 @@ $welcome-transparent-bg: rgba(18,38,32,0.6);
 .welcome-container{
   height: 100%;
   color: $font-color;
+  background-image: url("/assets/images/bcg-h.png");  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   display: grid;
   grid-template-rows: 10% 80% 10%;

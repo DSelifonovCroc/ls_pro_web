@@ -2,9 +2,9 @@
 
 .socials{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
-        "a b c d e";
+        "a b c";
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -33,8 +33,8 @@
             }
         }
 
-        &.vk{grid-area: b;}
-        &.gh{grid-area: c}
-        &.in{grid-area: d;}
+        &.vk{grid-area: a;}
+        &.gh{grid-area: b;}
+        &.in{grid-area: c;}
     }
 }
