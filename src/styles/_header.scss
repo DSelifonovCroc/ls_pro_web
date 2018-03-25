@@ -9,13 +9,31 @@
   color: $font-color;
 
   .header__top-row{
-    .header-socials{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: 
+      "left  center center center center right";
+    align-items: center;
 
-      .icon{
-        fill: white;
-        &:hover{
-            fill: $buttons-green-hover;
-        }
+    .header-socials{
+      grid-area: left;
+    }
+
+    .header-burger{
+      grid-area: right;
+      justify-self: right;
+
+      .burger__btn{
+        background-color: transparent;
+        border: none;
+      }
+    }
+
+    .icon{
+      cursor: pointer;
+      fill: white;
+      &:hover{
+          fill: $buttons-green-hover;
       }
     }
   }

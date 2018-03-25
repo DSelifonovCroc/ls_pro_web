@@ -4,6 +4,8 @@
 @import "_footer";
 @import "blog";
 
+$milk-bg: #faf8f0;
+
 @font-face{
   font-family: roboto-medium;
   src: url('../fonts/Roboto-Medium.ttf');
@@ -23,6 +25,7 @@ body, html{
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
+  background-color: $milk-bg;
 }
 
 .user{
