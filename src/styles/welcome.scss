@@ -1,0 +1,153 @@
+@import '_vars';
+
+$btns-border-color: #a0b99f;
+$welcome-transparent-bg: rgba(18,38,32,0.6);
+
+.welcome-container{
+  height: 100%;
+  color: $font-color;
+
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-areas: 
+    "auth"
+    "welcome"
+    "footer";
+
+  .welcome__authorize{
+    @media (max-width: 1200px) {
+      padding: 20px;
+    }
+    padding: 24px 100px;
+
+    justify-self: end;
+    grid-area: auth;
+
+    .authorize__btn{
+      border: 2px solid white;
+      border-radius: 26px;
+      padding: 11px 26px;
+      background-color: transparent;
+      color: $font-color;
+      font-family: roboto-medium;
+      font-size: $font-size-main;
+      cursor: pointer;
+
+      &:hover{
+        background-color: $green-main;
+        border-color: $green-secondary;
+      }
+    }
+  }
+
+  .welcome__welcome{
+    grid-area: welcome;
+    justify-self: center;
+    align-self: center;
+
+    display: grid;
+    grid-template-areas: 
+      'user'
+      'socials'
+      'btns';
+
+    border-radius: 5px;
+    background-color: $welcome-transparent-bg;
+
+    .welcome__user{
+      grid-area: user;
+      margin: 40px 0;
+    }
+
+    .welcome__socials{
+      grid-area: socials;
+      text-align: center;
+      margin: 0 0 40px 0;
+      padding: 0 25%;
+
+      .icon{
+        fill: white;
+        opacity: 0.6;
+
+        &:hover{
+            fill: $buttons-green-hover;
+            opacity: 1;
+        }
+      }
+    }
+
+    .welcome__btn-row{
+      grid-area: btns;
+
+      .btn-row__btn{
+        cursor: pointer;
+        float: left;
+        padding: 14px 32px;
+        background-color: $buttons-green;
+        border: none;
+        color: $font-color;
+        font-family: roboto-medium;
+        font-size: $font-size-main;
+        
+        &:first-child{
+          border-bottom-left-radius: 5px;
+          border-right: 2px $btns-border-color solid;
+        }
+
+        &:last-child{
+          border-bottom-right-radius: 5px;
+          border-left: 2px $btns-border-color solid;
+        }
+
+        &:hover{
+          background-color: $buttons-green-hover;
+        }
+      }
+    }
+  }
+
+  .welcome__footer{
+    grid-area: footer;
+    text-align: center;
+    background: linear-gradient(to top, rgba(0,0,0, 0.5), rgba(0,0,0, 0));
+  }
+}
+
+
+// iPhone
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width : 667px) {
+  .welcome-container{
+    .welcome__authorize{
+      justify-self: center;
+    }
+
+    .welcome__welcome{
+      .welcome__btn-row{
+        .btn-row__btn{
+          padding: 17px 23px;
+        }
+      }
+    }
+
+    .welcome__footer{
+      padding: 0 40px;
+    }
+  }
+}
+
+// iPad
+@media only screen 
+  and (min-device-width: 667px) 
+  and (max-device-width: 1024px) {
+  .welcome-container{
+    .welcome__welcome{
+      .welcome__btn-row{
+        .btn-row__btn{
+          padding: 15px 25px;
+        }
+      }
+    }
+  }
+}

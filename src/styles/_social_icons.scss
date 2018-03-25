@@ -1,0 +1,40 @@
+@import '_vars';
+
+.socials{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 
+        "a b c d e";
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .socials__item{
+        align-self: baseline;
+
+        .socials__item-link{
+            display: block;
+        }
+
+        .icon{
+            &.icon-gh{
+                width: 26px;
+                height: 22px;
+            }
+    
+            &.icon-in{
+                width: 24px;
+                height: 23px; 
+            }
+    
+            &.icon-vk{
+                width: 30.011px;
+                height: 17.123px;
+            }
+        }
+
+        &.vk{grid-area: b;}
+        &.gh{grid-area: c}
+        &.in{grid-area: d;}
+    }
+}

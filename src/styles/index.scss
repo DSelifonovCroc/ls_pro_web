@@ -1,3 +1,48 @@
+@import "welcome";
+@import "_social_icons";
+
+@font-face{
+    font-family: roboto-medium;
+    src: url('../fonts/Roboto-Medium.ttf');
+}
+
+@font-face{
+    font-family: roboto-regular;
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+body, html{
+    font-family: roboto-regular;
+    font-size: $font-size-main;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body{
-    margin: 100px;
+    background-image: url("/assets/images/bcg-h.png");  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.user{
+    text-align: center;
+
+    .user__pic{
+        display: inline-block;
+
+        .user__pic-img{
+          width: 140px;
+          height: 140px;
+          border-radius: 50%;
+        }
+    }
+
+    .user__description{
+      .user__name{
+        font-family: roboto-medium;
+        font-size: 28px;
+      }
+    }
 }

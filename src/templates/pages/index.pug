@@ -1,13 +1,31 @@
 extends ../base
 
 block variables
-    - var title = 'Home'
+  - var title = 'Добро пожаловать'
 
 block content
-    h1 Home
-    form
-        label(for="email") email
-        input(name="email" id="email")
-        label(for="password") password
-        input(name="password" id="password")
-        button Sign in
+  .welcome-container
+    section.welcome__authorize
+      button.authorize__btn Авторизоваться
+
+    section.welcome__welcome
+      .user.welcome__user
+          .user__pic
+            img.user__pic-img(src='/assets/media/user.jpg')
+          .user__description
+            .user__name Дмитрий Селифонов
+            .user__info Личный сайт разработчика
+
+      .welcome__socials
+        include ../parts/socials
+              
+      .welcome__btn-row
+        each btn in ['Мои работы', 'Обо мне', 'Блог']
+          button.btn-row__btn #{btn}
+    
+    section.welcome__footer
+      p @ Дмитрий Селифонов. Создано с любовью в LoftSchool.
+
+
+
+    

@@ -1,7 +1,12 @@
 extends ../base
 
 block variables
-    - var title = 'Blog'
+    - var title = 'Блог'
+    - var hardcode_data = [
+        {name: 'post 1', value: 'post body 1'},
+        {name: 'post 2', value: 'post body 2'},
+        {name: 'post 3', value: 'post body 3'},
+    ]
 
 block content
     h1 Blog
@@ -12,3 +17,4 @@ block content
         li
             h2 Article 2
             p text 2
+            p #{title}
