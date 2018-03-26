@@ -1,16 +1,8 @@
-block variables
-
-header.header
-  .header__top-row
-    .header-socials
-      include socials 
-    .header-burger
-      button.burger__btn
-        svg.icon.icon-burger(width="40px" height="35px" )
-          use(xlink:href=`assets/images/sprite.svg#burger`)
-  .user.header__user
-    .user__pic
-      img.user__pic-img(src='/assets/media/user.jpg')
-  .header__title-row
-    h1.header-title #{title}
-    p.header-description #{description}
+.header__top-row
+  .header-socials
+    include socials 
+  .header-burger
+    button.burger__btn
+      svg.icon.icon-burger(width="40px" height="35px" )
+        use(xlink:href=`assets/images/sprite.svg#burger`)
+block details

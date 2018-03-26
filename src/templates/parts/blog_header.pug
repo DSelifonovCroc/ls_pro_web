@@ -1,0 +1,10 @@
+extends header
+
+block details
+  .user.header__user
+    include user_pic
+  .header__title-row
+    h1.header-title #{title}
+    p.header-description #{description}
+    svg.blog__header-svg
+      use(xlink:href=`assets/images/sprite.svg#blog-text`)

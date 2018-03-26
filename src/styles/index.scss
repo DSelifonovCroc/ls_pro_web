@@ -16,6 +16,11 @@ $milk-bg: #faf8f0;
   src: url('../fonts/Roboto-Regular.ttf');
 }
 
+@font-face{
+  font-family: Sansus-Webissimo-Regular;
+  src: url('../fonts/Sansus-Webissimo-Regular.ttf');
+}
+
 body, html{
   font-family: roboto-regular;
   font-size: $font-size-main;
@@ -26,6 +31,10 @@ body, html{
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
   background-color: $milk-bg;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Sansus-Webissimo-Regular;
+  }
 }
 
 .user{

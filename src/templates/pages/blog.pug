@@ -1,17 +1,18 @@
 extends ../base
-
 block append variables
   - var title = 'Блог'
   - var description = 'Статьи, которые я написал'
   - 
     var hardcode_data = [
-      {name: 'post 1', value: 'post body 1', date: '01-01-1970'},
-      {name: 'post 2', value: 'post body 2', date: '01-01-1970'},
-      {name: 'post 3', value: 'post body 3', date: '01-01-1970'},
+      {name: "post 1", value: "post body 1", date: "01-01-1970"},
+      {name: "post 2", value: "post body 2", date: "01-01-1970"},
+      {name: "post 3", value: "post body 3", date: "01-01-1970"},
     ]
 
 block content
   .blog-container
+    header.header.blog__header  
+      include ../parts/blog_header
     main.blog__content
       nav.content__nav
         ul.nav__list
@@ -20,6 +21,9 @@ block content
       section.content__article-list
         each item in hardcode_data
           article.content__article
+            h2.article__title #{item['name']}
             .posted-at #{item['date']}
             p #{item['value']}
+    footer.footer-container.blog__footer
+      include ../parts/footer
   

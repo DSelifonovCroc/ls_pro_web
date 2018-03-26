@@ -3,8 +3,6 @@ extends ../base
 block variables
   - var title = 'Добро пожаловать'
 
-block header
-
 block content
   .welcome-container
     section.welcome__authorize
@@ -12,11 +10,8 @@ block content
 
     section.welcome__welcome
       .user.welcome__user
-          .user__pic
-            img.user__pic-img(src='/assets/media/user.jpg')
-          .user__description
-            .user__name Дмитрий Селифонов
-            .user__info Личный сайт разработчика
+        include ../parts/user_pic
+        include ../parts/user_description         
 
       .welcome__socials
         include ../parts/socials
@@ -27,7 +22,4 @@ block content
     
     section.welcome__footer
       p @ Дмитрий Селифонов. Создано с любовью в LoftSchool.
-
-block footer
-
     
