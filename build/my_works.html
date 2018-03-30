@@ -2,44 +2,174 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My works</title>
+    <title>Мои работы</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="icon" type="image/png" href="/assets/images/fav_forest.png">
     <link rel="stylesheet" href="/assets/styles/index.min.css">
     <script src="/assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <div class="my-works__header"> 
-      <div class="header__top-row">
-        <div class="header-socials">
-          <ul class="socials">
-            <li class="socials__item vk"><a class="socials__item-link" href="#"></a>
-              <svg class="icon icon-vk" width="30px" height="17px">
-                <use xlink:href="assets/images/sprite.svg#vk"></use>
+    <div class="container works-container" id="top">
+      <header class="header works__header"> 
+        <div class="header__top-row">
+          <div class="header-socials">
+            <ul class="socials">
+              <li class="socials__item vk"><a class="socials__item-link" href="#">
+                  <svg class="icon icon-vk" width="30px" height="17px">
+                    <use xlink:href="assets/images/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="socials__item gh"><a class="socials__item-link" href="#">
+                  <svg class="icon icon-gh" width="30px" height="17px">
+                    <use xlink:href="assets/images/sprite.svg#gh"></use>
+                  </svg></a></li>
+              <li class="socials__item in"><a class="socials__item-link" href="#">
+                  <svg class="icon icon-in" width="30px" height="17px">
+                    <use xlink:href="assets/images/sprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+          <div class="header-burger">
+            <button class="burger__btn">
+              <svg class="icon icon-burger" width="40px" height="35px">
+                <use xlink:href="assets/images/sprite.svg#burger"></use>
               </svg>
-            </li>
-            <li class="socials__item gh"><a class="socials__item-link" href="#"></a>
-              <svg class="icon icon-gh" width="30px" height="17px">
-                <use xlink:href="assets/images/sprite.svg#gh"></use>
-              </svg>
-            </li>
-            <li class="socials__item in"><a class="socials__item-link" href="#"></a>
-              <svg class="icon icon-in" width="30px" height="17px">
-                <use xlink:href="assets/images/sprite.svg#in"></use>
-              </svg>
-            </li>
-          </ul>
+            </button>
+          </div>
         </div>
-        <div class="header-burger">
-          <button class="burger__btn">
-            <svg class="icon icon-burger" width="40px" height="35px">
-              <use xlink:href="assets/images/sprite.svg#burger"></use>
+        <div class="user header__user">
+          <div class="user__pic"><img class="user__pic-img" src="/assets/media/user.jpg"></div>
+          <div class="user__description">
+            <div class="user__name">Дмитрий Селифонов</div>
+            <div class="user__info">Личный сайт разработчика</div>
+          </div>
+        </div>
+        <div class="header__arrow-btn"><a class="header-arrow" href="#content">
+            <svg class="header-arrow-svg" width="26px" height="16px" viewbox="0 0 26 16">
+              <use xlink:href="assets/images/sprite.svg#arrow-down"></use>
+            </svg></a></div>
+        <svg class="header-portfolio-svg">
+          <use xlink:href="assets/images/sprite.svg#portfolio"></use>
+        </svg>
+      </header>
+      <main class="works__content" id="content">
+        <svg class="angles-svg">
+          <use xlink:href="assets/images/sprite.svg#bg"></use>
+        </svg>
+        <div class="works__title-row">
+          <h1 class="works__title">Мои работы</h1>
+          <svg class="works__title-works-svg" width="505.101px" height="165.036px">
+            <use xlink:href="assets/images/sprite.svg#works"></use>
+          </svg>
+        </div>
+        <div class="works__slider">
+          <div class="container">
+            <ul id="slides">
+              <li class="slide showing"></li>
+              <li class="slide"></li>
+              <li class="slide"></li>
+            </ul>
+            <div class="buttons">
+              <button class="controls prev" id="previous"> 
+                <svg class="controls__arrow" width="26" height="16">
+                  <use xlink:href="assets/images/sprite.svg#arrow-up"></use>
+                </svg>
+              </button>
+              <button class="controls next" id="next"> 
+                <svg class="controls__arrow" width="26" height="16">
+                  <use xlink:href="assets/images/sprite.svg#arrow-up"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="works__about">
+          <div class="works__title-row">
+            <h1 class="works__title">Что обо мне говорят</h1>
+            <svg class="works__title-works-svg" width="498.161px" height="175.44px">
+              <use xlink:href="assets/images/sprite.svg#about"></use>
             </svg>
-          </button>
+          </div>
+          <div class="about__quotes">
+            <ul class="quotes__quotes-list">
+              <li class="quotes__quotes-item">
+                <div class="quotes-item__pic"><img class="quotes-item__img" src="/assets/media/user.jpg"></div>
+                <div class="quotes-item__text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</div>
+                <div class="quotes-item__credits">
+                  <div class="credits__name">Ковальчук Дмитрий</div>
+                  <div class="credits__post">— основатель LoftSchool</div>
+                </div>
+              </li>
+              <li class="quotes__quotes-item">
+                <div class="quotes-item__pic"><img class="quotes-item__img" src="/assets/media/user.jpg"></div>
+                <div class="quotes-item__text">Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!</div>
+                <div class="quotes-item__credits">
+                  <div class="credits__name">Сабанцев Владимир</div>
+                  <div class="credits__post">— преподаватель</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="about__contacts">
+            <form class="contacts__form">
+              <h2 class="form__title">Связаться со мной</h2>
+              <div class="form__inputs">
+                <input class="contacts__input" name="name" placeholder="Имя">
+                <input class="contacts__input" name="email" placeholder="Email">
+                <textarea class="contacts__input" rows="5" name="text" placeholder="Ваше сообщение"></textarea>
+              </div>
+              <div class="form__btns">
+                <button class="contacts__btn" type="submit" name="submit">Отправить</button>
+                <button class="contacts__btn" name="clear">Очистить</button>
+              </div>
+            </form>
+          </div>
+          <div class="about__to-top"><a class="to-top__link" href="#top">
+              <svg class="arrow-up-svg" width="26" height="16">
+                <use xlink:href="assets/images/sprite.svg#arrow-up"></use>
+              </svg></a></div>
         </div>
-      </div>
+      </main>
+      <footer class="footer-container works__footer">
+        <div class="sections-row">
+          <div class="credits">
+            <p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. </p>
+          </div>
+          <div class="links">
+            <ul class="links__list">
+              <li class="links__item"><a class="footer-link" href="/my_works.html">Мои работы</a></li>
+              <li class="links__item"><a class="footer-link" href="/about.html">Обо мне</a></li>
+              <li class="links__item"><a class="footer-link" href="/blog.html">Блог</a></li>
+              <li class="links__item"><a class="footer-link" href="/index.html">Авторизация</a></li>
+            </ul>
+            <div class="footer-socials">
+              <ul class="socials">
+                <li class="socials__item vk"><a class="socials__item-link" href="#">
+                    <svg class="icon icon-vk" width="30px" height="17px">
+                      <use xlink:href="assets/images/sprite.svg#vk"></use>
+                    </svg></a></li>
+                <li class="socials__item gh"><a class="socials__item-link" href="#">
+                    <svg class="icon icon-gh" width="30px" height="17px">
+                      <use xlink:href="assets/images/sprite.svg#gh"></use>
+                    </svg></a></li>
+                <li class="socials__item in"><a class="socials__item-link" href="#">
+                    <svg class="icon icon-in" width="30px" height="17px">
+                      <use xlink:href="assets/images/sprite.svg#in"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+          </div>
+          <blockquote class="quote">
+            <p>Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.</p>
+            <footer>— Martin Golding</footer>
+          </blockquote>
+        </div>
+        <div class="author-row">
+          <p>© Дмитрий Селифонов | Создано с любовью в LoftSchool | 2018</p>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

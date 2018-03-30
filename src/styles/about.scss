@@ -1,0 +1,362 @@
+.about-container{
+  .about{
+    color: $dark-font-color-second;
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 1fr 1fr;
+
+    .block-title{
+      @extend .underlined-header;
+      margin: 0;
+    }
+
+    .block-subtitle{
+      @extend .underlined-header;
+      color: $dark-font-color-second;
+      margin: 0;
+    }
+
+    .angle-svg{
+      height: 1040px;
+      position: absolute;
+      &.left{
+        fill: $slider-bg;
+        top: -165px;
+        width: 100%;
+        left: 0;
+      }
+
+      &.right{
+        fill: $right-part-bg;
+        width: calc(100% + 3px);
+        left: -3px;
+        top: -163px;
+      }
+    }
+
+    .about__content{
+      position: relative;
+      z-index: 10;
+
+      &.left{
+        display: grid;
+        grid-template-areas: "about me";
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+      }
+
+      &.right{
+        padding: 20px 40px;
+      }
+    }
+
+    .about__left{
+      position: relative;
+      grid-area: left;
+      background-color: $slider-bg;
+
+      .about__left-title{
+        margin-bottom: 30px;
+        grid-area: about;
+        text-align: center;
+        position: relative;
+
+        .block-title{
+          position: relative;
+          z-index: 10;
+        }
+
+        .about__title-svg{
+          @include horizontally-centrilized();
+          fill: $watermarks-green-color;
+          opacity: 0.12;
+          width: 100%;
+          top: -40px;
+        }
+      }
+
+      .about__left-content{
+        grid-area: me;
+
+        .user-description__title{
+          margin-top: 40px;
+          margin-bottom: 30px;
+          text-align: center;
+        }
+
+        .user-description__avatar{
+          width: 100%;
+        }
+      }
+    }
+
+    .about__right{
+      position: relative;
+      grid-area: right;
+      background-color: $right-part-bg;
+
+      .about__right-title{
+        max-width: 270px;
+        margin: 0 auto 30px;
+        text-align: center;
+      }
+
+      .skills-list, .skills-row__list{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .skills-list{
+        .skills-list__item{
+          margin: 40px 0;
+        }
+      }
+
+      .skills-row{
+        .skills-row__title{
+          font-family: roboto-medium;
+          font-size: 2em;
+        }
+
+        .skills-row__list{
+          .skills-row__item{
+            display: inline-block;
+            margin-top: 15px;
+            margin-right: 40px;
+
+            &:last-child{
+              margin-right: 0;
+            }
+
+            .item-wrapper{
+              display: grid;
+              grid-template-areas: "center";
+              width: 120px;
+              .skill-svg, .skill__title{
+                grid-area: center;
+                justify-self: center;
+                align-self: center;
+              }
+              .skill__title{
+                z-index: 10;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .map{
+    position: relative;
+    width: 100%;
+    height: 1100px;
+    display: grid;
+    grid-template-rows: 0px 100%;
+    grid-template-areas: 
+      'top'
+      'center';
+
+    .map__contacts{
+      grid-area: center;
+      z-index: 10;
+      justify-self: center;
+      align-self: center;
+      margin-bottom: 173px;
+    }
+  }
+}
+
+.google-map{
+  grid-area: center;
+  width: 100%;
+  height: 100%;
+}
+
+.contacts{
+  background-color: rgba(255,255,255, 0.7);
+  border-radius: 5px;
+  padding: 40px;
+
+  .contacts__title-row{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+
+    .contacts__title{
+      @extend .underlined-header;
+      color: $dark-font-color-second;
+      margin: 0;
+      &:after{
+        border-color: $dark-font-color-second;
+      }
+    }
+  }
+    
+  .contacts__list{
+    color: $dark-font-color-second;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .contacts__item{
+      margin: 30px 0;
+      display: block;
+
+      &:last-child{
+        margin: 0;
+      }
+
+      .contacts-row__icon{
+        width: 25px;
+        height: 25px;
+        fill: $green-main;
+        vertical-align: middle;
+      }
+      .contacts-row__content{
+        vertical-align: middle;
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+.g-circles{
+  fill: none;
+  stroke-width: 20;
+  .rad{
+    stroke: #dfdcd5;
+    fill: none;
+  } 
+  .sector{
+    fill: none;
+    stroke: #77a266;
+    transition: all 1s;
+    stroke-dasharray: 314;
+    stroke-dashoffset: 283;
+  }
+}
+
+@media(max-width: 1366px){
+  .about-container .about .about__content.left{
+    grid-template-areas: 
+    "about"
+    "me";
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 1024px){
+  .about-container .about{
+    grid-template-areas: 
+    "left"
+    "right";
+    grid-template-columns: 1fr;
+  }
+
+  .angle-svg{
+    display: none;
+  }
+}
+
+@media(max-width: 768px){
+  .about-container .about{
+    .about__right .skills-row .skills-row__list .skills-row__item:nth-child(3n+3){
+      margin-right: 0;
+    }
+  }
+}
+
+// laptop
+@media (min-width: 1024px) 
+  and (max-width: 1366px) {
+  .about-container{
+    .about{
+      .about__content{
+        &.left{
+          padding: 20px 80px;
+        }
+
+        &.right{
+          padding: 20px 40px;
+        }
+      }
+    }
+
+    .map{
+        height: 960px;
+    }
+  }
+}
+
+// iPad
+@media (min-width: 667px) 
+  and (max-width: 1024px) {
+  .about-container{
+    .about{
+      .about__content{
+        &.left, &.right{
+          padding: 50px 145px;
+        }
+
+        .about__right-content{
+          text-align: center;
+        }
+      }
+    }
+    .map{
+      height: 910px;
+
+      .map__contacts{
+        margin-bottom: 273px;
+      }
+    }
+  }
+}
+
+// iPhone
+@media (max-width : 667px) {
+  .about-container{
+    .about{
+      grid-template-areas: 
+      "left"
+      "right";
+      grid-template-columns: 1fr;
+      
+      .about__left .about__left-title .about__title-svg{
+        width: 50%;
+        top: -65px;
+      }
+
+      .about__content{
+        &.left, &.right{
+          padding: 30px 0;
+        }
+
+        .about__right-content{
+          text-align: center;
+        }
+      }
+
+      .about__right .skills-row .skills-row__list .skills-row__item:nth-child(even){
+        margin-right: 0;
+      }
+
+      .text-content{
+        margin: 0 10px;
+      }
+    }
+    .map{
+      height: 1140px;
+      .map__contacts{
+        justify-self: unset;
+        align-self: unset;
+        margin-bottom: 0;
+        .contacts{
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}

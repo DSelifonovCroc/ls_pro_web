@@ -4,7 +4,7 @@ block variables
   - var title = 'Добро пожаловать'
 
 block content
-  .welcome-container
+  .container.welcome-container
     section.welcome__authorize
       button.authorize__btn Авторизоваться
 
@@ -17,8 +17,9 @@ block content
         include ../parts/socials
               
       .welcome__btn-row
-        each btn in ['Мои работы', 'Обо мне', 'Блог']
-          button.btn-row__btn #{btn}
+        a.btn-row__btn(href="/my_works.html") Мои работы
+        a.btn-row__btn(href="/about.html") Обо мне
+        a.btn-row__btn(href="/blog.html") Блог
     
     section.welcome__footer
       p @ Дмитрий Селифонов. Создано с любовью в LoftSchool.

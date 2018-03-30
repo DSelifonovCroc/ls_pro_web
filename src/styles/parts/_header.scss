@@ -1,0 +1,137 @@
+@import "_vars";
+
+.header{
+  background-image: url("/assets/images/bcg-h.png");  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px 30px 50px 30px;  
+  color: $light-font-color;
+  position: relative;
+
+  .header__user{
+    padding: 90px 0;
+  }
+
+  .header-portfolio-svg{
+    width: 1175.495px;
+    height: 313.961px;
+    fill: white;
+    opacity: 0.12;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  .header__arrow-btn{
+    text-align: center;
+    position: relative;
+    z-index: 10;
+
+    .header-arrow{
+      background: transparent;
+      border: none;
+      cursor: pointer;
+  
+      &:hover{
+        .header-arrow-svg{
+          opacity: 1;
+        }
+      }
+  
+      .header-arrow-svg{
+        width: 26px;
+        height: 16px;
+        fill: white;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .header__top-row{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: 
+      "left center right";
+    align-items: center;
+
+    .header-socials{
+      grid-area: left;
+    }
+
+    .header-burger{
+      grid-area: right;
+      justify-self: right;
+
+      .burger__btn{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        &:hover{
+          .icon{
+            fill: $buttons-green-hover;
+          }
+      }
+
+      }
+    }
+
+    .icon{
+      cursor: pointer;
+      fill: white;
+      &:hover{
+          fill: $buttons-green-hover;
+      }
+    }
+  }
+
+  .header__title-row{
+    text-align: center;
+
+    .header__title{
+      text-transform: uppercase;
+      margin: 20px 0;
+    }
+  }
+}
+
+// iPad
+@media only screen 
+  and (min-device-width: 667px) 
+  and (max-device-width: 1024px){
+    .header{
+      padding: 10px 10px 50px;  
+  
+      .header-portfolio-svg{
+        width: 740px;
+        height: 197px;
+      }
+    }
+  }
+
+// iPhone
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width : 667px) {
+  .header{
+    padding: 10px 10px 50px;  
+
+    .header-portfolio-svg{
+      display: none;
+    }
+
+    .header__user{
+      padding: 90px 0 150px;
+    }
+
+    .header__top-row{
+      grid-template-columns: 4fr 1fr 1fr;
+      grid-template-areas: 
+        "left center right";
+    }
+  }
+}

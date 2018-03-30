@@ -1,9 +1,75 @@
 extends ../base
 
 block append variables
-  - var title = 'My works'
+  - var title = 'Мои работы'
+  - 
+    var hardcoded_quotes = [
+      {
+        picUrl: '/assets/media/user.jpg',
+        text: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!',
+        name: 'Ковальчук Дмитрий',
+        post: '— основатель LoftSchool'
+      },
+      {
+        picUrl: '/assets/media/user.jpg',
+        text: 'Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!',
+        name: 'Сабанцев Владимир',
+        post: '— преподаватель'
+      },
+    ]
 
 block content
-  .my-works__header  
-    include ../parts/header
+  .container.works-container#top
+    header.header.works__header  
+      include ../parts/header
+
+    main.works__content#content
+      svg.angles-svg
+        use(xlink:href='assets/images/sprite.svg#bg')
+
+      .works__title-row
+        h1.works__title Мои работы
+        svg.works__title-works-svg(width="505.101px" height="165.036px")
+          use(xlink:href='assets/images/sprite.svg#works')
+        
+      .works__slider
+        include ../parts/slider
+
+      .works__about
+        .works__title-row
+          h1.works__title Что обо мне говорят
+          svg.works__title-works-svg(width="498.161px" height="175.44px")
+            use(xlink:href='assets/images/sprite.svg#about')
+
+        .about__quotes
+          ul.quotes__quotes-list
+            each quote in hardcoded_quotes
+              li.quotes__quotes-item
+                .quotes-item__pic
+                  img.quotes-item__img(src=`${quote['picUrl']}`)
+                .quotes-item__text #{quote['text']}
+                .quotes-item__credits
+                  .credits__name #{quote['name']}
+                  .credits__post #{quote['post']}
+
+        .about__contacts
+          form.contacts__form
+            h2.form__title Связаться со мной
+            .form__inputs
+              input.contacts__input(name="name" placeholder="Имя")
+              input.contacts__input(name="email" placeholder="Email")
+              textarea.contacts__input(rows="5" name="text" placeholder="Ваше сообщение")
+            .form__btns
+              button.contacts__btn(type="submit" name="submit") Отправить
+              button.contacts__btn(name="clear") Очистить
+
+        .about__to-top
+          a.to-top__link(href="#top")
+            svg.arrow-up-svg(width="26" height="16")
+              use(xlink:href='assets/images/sprite.svg#arrow-up')
+
+    footer.footer-container.works__footer
+      include ../parts/footer
+
+  
     

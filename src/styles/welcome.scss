@@ -1,11 +1,5 @@
-@import '_vars';
-
-$btns-border-color: #a0b99f;
-$welcome-transparent-bg: rgba(18,38,32,0.6);
-
 .welcome-container{
-  height: 100%;
-  color: $font-color;
+  color: $light-font-color;
   background-image: url("/assets/images/bcg-h.png");  
   background-position: center;
   background-repeat: no-repeat;
@@ -19,7 +13,7 @@ $welcome-transparent-bg: rgba(18,38,32,0.6);
     "footer";
 
   .welcome__authorize{
-    @media (max-width: 1200px) {
+    @media (max-width: 1368px) {
       padding: 20px;
     }
     padding: 24px 100px;
@@ -32,7 +26,7 @@ $welcome-transparent-bg: rgba(18,38,32,0.6);
       border-radius: 26px;
       padding: 11px 26px;
       background-color: transparent;
-      color: $font-color;
+      color: $light-font-color;
       font-family: roboto-medium;
       font-size: $font-size-main;
       cursor: pointer;
@@ -84,12 +78,13 @@ $welcome-transparent-bg: rgba(18,38,32,0.6);
       grid-area: btns;
 
       .btn-row__btn{
+        text-decoration: none;
         cursor: pointer;
         float: left;
         padding: 14px 32px;
         background-color: $buttons-green;
         border: none;
-        color: $font-color;
+        color: $light-font-color;
         font-family: roboto-medium;
         font-size: $font-size-main;
         
@@ -119,9 +114,7 @@ $welcome-transparent-bg: rgba(18,38,32,0.6);
 
 
 // iPhone
-@media only screen 
-and (min-device-width: 375px) 
-and (max-device-width : 667px) {
+@media (max-width : 667px) {
   .welcome-container{
     .welcome__authorize{
       justify-self: center;
@@ -142,9 +135,8 @@ and (max-device-width : 667px) {
 }
 
 // iPad
-@media only screen 
-  and (min-device-width: 667px) 
-  and (max-device-width: 1024px) {
+@media (min-width: 667px) 
+  and (max-width: 1024px) {
   .welcome-container{
     .welcome__welcome{
       .welcome__btn-row{

@@ -4,5 +4,14 @@
   .header-burger
     button.burger__btn
       svg.icon.icon-burger(width="40px" height="35px" )
-        use(xlink:href=`assets/images/sprite.svg#burger`)
+        use(xlink:href='assets/images/sprite.svg#burger')
 block details
+  .user.header__user
+    include user_pic
+    include user_description
+  .header__arrow-btn
+    a.header-arrow(href="#content")
+      svg.header-arrow-svg(width="26px" height="16px" viewbox="0 0 26 16")
+        use(xlink:href='assets/images/sprite.svg#arrow-down')
+  svg.header-portfolio-svg
+    use(xlink:href='assets/images/sprite.svg#portfolio')

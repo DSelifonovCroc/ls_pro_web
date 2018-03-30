@@ -1,5 +1,4 @@
-$font-color: white;
-$blog-font-color: #455a64;
+$light-font-color: white;
 
 $green-main: #4E8839;
 $green-secondary: #729E19;
@@ -9,6 +8,27 @@ $buttons-green-hover: #498039;
 
 $font-size-main: 16px;
 
+$blog-font-color: #455a64;
+$blog-bg: #faf8f0;
+$btns-border-color: #a0b99f;
+$welcome-transparent-bg: rgba(18,38,32,0.6);
+
+$works-bg: #f8f9f5;
+$dark-headers-font-color: #373e42;
+$dark-font-color: #5d5a55;
+$dark-font-color-second: #566358;
+$watermarks-green-color: #93c42e;
+$slider-bg: #ebefe2;
+$right-part-bg: #f4f5f0;
+
+
 @mixin green-main-rgba-background($opacity){
     background-color: rgba(78, 136, 57, $opacity);
+}
+
+@mixin horizontally-centrilized(){
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
