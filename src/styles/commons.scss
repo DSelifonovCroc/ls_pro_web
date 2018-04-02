@@ -1,0 +1,122 @@
+@font-face{
+    font-family: roboto-medium;
+    src: url('../fonts/Roboto-Medium.ttf');
+}
+  
+@font-face{
+    font-family: roboto-regular;
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face{
+    font-family: roboto-light;
+    src: url('../fonts/Roboto-Light.ttf');
+}
+
+@font-face{
+    font-family: Sansus-Webissimo-Regular;
+    src: url('../fonts/Sansus-Webissimo-Regular.ttf');
+}
+
+body, html{
+    font-family: roboto-regular;
+    font-size: $font-size-main;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+}
+
+h1{
+    font-size: 4em;
+}
+
+h2{
+    font-size: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    display: inline-block;
+    font-family: Sansus-Webissimo-Regular;
+}
+
+.underlined-header{
+    text-transform: uppercase;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    color: $dark-headers-font-color;
+
+    &:after{
+        display: block;
+        content: '';
+        border-bottom: 3px solid $dark-headers-font-color;
+        width: 90px;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+}
+
+.angles-svg{
+    position: absolute;
+    top: -165px;
+    display: block;
+    width: 100%;
+    height: 340px;
+}
+
+.container{
+    overflow: hidden;
+    min-height: 100%;
+    position: relative;
+}
+
+// iPad
+@media (min-width: 667px) 
+and (max-width: 1024px){
+    .underlined-header{
+        margin: 20px 0;
+
+        &:after{
+        width: 55px;
+        margin-top: 15px;
+        }
+    }
+
+    .angles-svg{
+        height: 290px;
+        top: -145px;
+    }
+
+    h1{
+        font-size: 3em;
+    }
+
+    h2{
+        font-size: 2em;
+    }
+}
+
+// iPhone
+@media (max-width : 667px) {
+    .underlined-header{
+        margin: 50px 0 25px;
+        &:after{
+        margin-top: 15px;
+        }
+    }
+
+    .angles-svg{
+        height: 290px;
+        top: -145px;
+    }
+
+    h1{
+        font-size: 2em;
+    }
+
+    h2{
+        font-size: 1.5em;
+    }
+}

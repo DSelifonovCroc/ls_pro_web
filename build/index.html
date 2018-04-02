@@ -1,23 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>Добро пожаловать</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <link rel="stylesheet" href="/assets/styles/app.min.css">
+    <link rel="icon" type="image/png" href="/assets/images/fav_forest.png">
+    <link rel="stylesheet" href="/assets/styles/index.min.css">
     <script src="/assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <h1>Home</h1>
-    <form>
-      <label for="email">email</label>
-      <input name="email" id="email">
-      <label for="password">password</label>
-      <input name="password" id="password">
-      <button>Sign in</button>
-    </form>
+    <div class="container welcome-container">
+      <section class="welcome__authorize">
+        <button class="authorize__btn" type="button">Авторизоваться</button>
+      </section>
+      <section class="welcome__welcome">
+        <div class="user welcome__user">
+          <div class="user__pic"><img class="user__pic-img" src="/assets/media/user.jpg"></div>
+          <div class="user__description">
+            <div class="user__name">Дмитрий Селифонов</div>
+            <div class="user__info">Личный сайт разработчика</div>
+          </div>
+        </div>
+        <div class="welcome__socials">
+          <ul class="socials">
+            <li class="socials__item vk"><a class="socials__item-link" href="#">
+                <svg class="icon icon-vk" width="30px" height="17px">
+                  <use xlink:href="assets/images/sprite.svg#vk"></use>
+                </svg></a></li>
+            <li class="socials__item gh"><a class="socials__item-link" href="#">
+                <svg class="icon icon-gh" width="30px" height="17px">
+                  <use xlink:href="assets/images/sprite.svg#gh"></use>
+                </svg></a></li>
+            <li class="socials__item in"><a class="socials__item-link" href="#">
+                <svg class="icon icon-in" width="30px" height="17px">
+                  <use xlink:href="assets/images/sprite.svg#in"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+        <div class="welcome__btn-row"><a class="btn-row__btn" href="/my_works.html">Мои работы</a><a class="btn-row__btn" href="/about.html">Обо мне</a><a class="btn-row__btn" href="/blog.html">Блог</a></div>
+      </section>
+      <section class="welcome__footer">
+        <p>@ Дмитрий Селифонов. Создано с любовью в LoftSchool.</p>
+      </section>
+    </div>
   </body>
 </html>

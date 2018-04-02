@@ -1,8 +1,111 @@
 extends ../base
 
-block variables
-    - var title = 'About'
+block append variables
+  - var title = 'Обо мне'
+  -
+    var contacts = [
+      {
+        type: 'skype', 
+        value: '-',
+        link: true
+      },
+      {
+        type: 'mailto', 
+        value: 'selifonovd@gmail.com',
+        link: true
+      },
+      {
+        type: 'tel', 
+        value: '+7 (925) 204-25-11',
+        link: true
+      },
+      {
+        type: 'mark', 
+        value: 'Москва, ул. Волочаевская, д. 5к1',
+        link: false
+      },
+    ]
+  -
+    var skills = [
+      {
+        name: 'Frontend',
+        points: ['Html5', 'css3', 'JavaScript']
+      },
+      {
+        name: 'Backend',
+        points: ['Python', 'Django', 'RoR', 'Postgres']
+      },
+      {
+        name: 'WorkFlow',
+        points: ['Git', 'Gulp', 'WebPack']
+      },
+    ]
 
 block content
-    h1 About
-    
+  .container.about-container
+    header.header.about__header
+      include ../parts/header
+
+    section.section.about
+      .about__left
+        svg.angle-svg.left
+          use(xlink:href='assets/images/sprite.svg#angle-left-svg')
+
+        .about__content.left
+          .about__left-title
+            h1.block-title Обо мне
+            svg.about__title-svg
+              use(xlink:href='assets/images/sprite.svg#about-text')
+
+          .about__left-content
+            .user-description
+              .user-description__image
+                img.user-description__avatar(src='/assets/media/user.jpg')
+              .user-description__title
+                h2.block-subtitle Кто я
+              .user-description__text.text-content
+                p Я веб разработчик из Москвы. Мне 23 года. Я занимаюсь разработкой корпоративных веб-приложений. Мне нравится делать интересные проекты с использованием современных технологий.
+                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+      
+      .about__right
+        svg.angle-svg.right
+          use(xlink:href='assets/images/sprite.svg#angle-right-svg')
+
+        .about__content.right
+          .about__right-title
+            h2.block-subtitle Чем я могу быть вам полезен
+          .about__right-text.text-content
+            p Больше всего меня привлекет, backend разработка, но я также знаком и могу решать задачи на frontend. Но давайте по порядку.
+          .about__right-content
+            ul.skills-list
+              each item in skills
+                li.skills-list__item
+                  .skills-row
+                    .skills-row__title #{item['name']}
+                    ul.skills-row__list
+                      each skill in item['points']
+                        li.skills-row__item
+                          .item-wrapper
+                            .skill-svg
+                              include ../parts/circles_svg
+                            .skill__title #{skill}
+    section.section.map
+      .google-map#map-container
+      .map__contacts
+        .contacts
+          .contacts__title-row
+            h2.contacts__title Контакты
+          ul.contacts__list
+            each contact in contacts
+              li.contacts__item
+                svg.contacts-row__icon(width="25px" height="25px")
+                  use(xlink:href=`assets/images/sprite.svg#${contact['type']}`)
+                if contact['link']
+                  a.contacts-row__content(href=`${contact['type']}:${contact['value']}`) #{contact['value']}
+                else 
+                  span.contacts-row__content #{contact['value']}
+
+    footer.footer-container.about__footer
+      include ../parts/footer
+
+  script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-hxykK7qoTcDmOm3IMShU-7VDqyRdzTQ&callback=initMap")

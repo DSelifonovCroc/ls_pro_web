@@ -1,0 +1,17 @@
+- var pages = [{name: 'Мои работы', href: '/my_works.html'},{name: 'Обо мне', href: '/about.html'},{name: 'Блог', href: '/blog.html'},{name: 'Авторизация', href: '/index.html'}]
+
+  .sections-row
+    .credits
+      p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+    .links
+      ul.links__list
+        each page in pages
+          li.links__item
+            a.footer-link(href=page['href']) #{page['name']}
+      .footer-socials
+        include socials
+    blockquote.quote
+      p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
+      footer — Martin Golding
+  .author-row
+    p © Дмитрий Селифонов | Создано с любовью в LoftSchool | 2018

@@ -1,0 +1,14 @@
+extends header
+
+block details
+  .user.header__user
+    include user_pic
+  .header__title-row
+    h1.header__title #{title}
+    p.header__description #{description}
+    .header__arrow-btn
+      button.header-arrow(type='button')
+        svg.header-arrow-svg(width="26px" height="16px" viewbox="0 0 26 16")
+          use(xlink:href='assets/images/sprite.svg#arrow-down')
+    svg.blog__header-svg
+      use(xlink:href='assets/images/sprite.svg#blog-text')

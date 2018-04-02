@@ -1,1 +1,5 @@
-const a = 1;
+import initWorks from './pages/works';
+import initAbout, {initMap} from './pages/about';
+
+initAbout();
+initWorks();

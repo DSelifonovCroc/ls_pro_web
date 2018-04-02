@@ -1,0 +1,240 @@
+.blog-container{
+  background-color: $blog-bg;
+  color: $blog-font-color;
+  padding-bottom: 200px;
+
+  .blog__header{
+    .header__user{
+      padding: 15px 0;
+    }
+
+    .header__title-row{
+      position: relative;
+
+      .header__title{
+        @extend .underlined-header;
+        color: white;
+        margin: 0;
+        &:after{
+          border-bottom-color: white;
+        }
+      }
+  
+      .blog__header-svg{
+        position: absolute;
+        top: -50px;
+        left: calc(50% - 150px);
+        fill: white;
+        opacity: 0.12;
+        width: 302.193px;
+        height: 208.012px;
+      }
+    }
+
+    .header__arrow-btn{
+      display: none;
+    }
+  }
+
+  .blog__content{
+    position: relative;
+    display: grid;
+    grid-template-areas: 
+      "nav content";
+    grid-template-columns: 1fr 3fr;
+    padding-top: 40px;
+
+    .angles-svg{
+      fill: $blog-bg;
+    }
+    
+    .content__nav{
+      grid-area: nav;
+      z-index: 5;
+      text-align: end;
+      margin-left: 30px;
+
+      .nav__list{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .nav__item{
+          .nav__link{
+            color: $blog-font-color;
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+
+            &:hover, &.active{
+              padding-right: 17px;
+              font-weight: 600;
+              color: $green-main;
+              border-right: 3px solid $green-main;
+            }
+          }
+        }
+      }
+    }
+
+    .content__article-list{
+      z-index: 5;
+      grid-area: content;
+      margin: 0 315px 0 115px;
+
+      .content__article{
+        margin-bottom: 70px;
+
+        &:after{
+          display: block;
+          content: '';
+          width: 70%;
+          margin-top: 70px;
+          border-top: 5px solid #ecebe4;
+        }
+
+        &:last-child{
+          &:after{
+            content: '';
+            border-top: none;
+          }
+        }
+
+        .article__title{
+          margin: 15px 0;
+        }
+
+        .posted-at{
+          color: $green-main;
+          margin: 30px 0;
+        }
+
+        .article__content{
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+
+}
+
+@media(max-width: 1366px){
+  .blog-container{
+    .blog__content{
+      &:before{
+        top: -110px;
+      }
+
+      .content__nav{
+        margin-left: 20px;
+      }
+
+      .content__article-list{
+        margin: 0 110px 0 100px;
+      }
+    }
+  }
+}
+
+// iPad
+@media (min-width: 667px) 
+  and (max-width: 1024px){
+
+  .blog-container{
+    padding-bottom: 275px;
+
+    .blog__header{
+      .header__user{
+        padding: 50px 0 0 0;
+      }
+
+      .header__arrow-btn{
+        display: block;
+        margin-top: 65px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .blog__content{
+      grid-template-columns: 0px 100%;
+
+      &:before{
+        top: -110px;
+      }
+
+      .content__nav{
+        display: none;
+      }
+
+      .content__article-list{
+        margin: 0 27px;
+
+        .content__article{
+          margin-bottom: 50px;
+  
+          &:after{
+            width: 100%;
+            margin-top: 50px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// iPhone
+@media (max-width : 667px) {
+  .blog-container{
+    padding-bottom: 370px;
+
+    .blog__header{
+
+      .header__title-row{
+        .header__title{
+          &:after{
+            width: 55px;
+          }
+        }
+      }
+
+      .header__user{
+        padding: 80px 0 0 0;
+      }
+
+      .header__arrow-btn{
+        display: block;
+        margin-top: 120px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .blog__content{
+      grid-template-columns: 0px 100%;
+
+      &:before{
+        top: -40px;
+      }
+
+      .content__nav{
+        display: none;
+      }
+
+      .content__article-list{
+        margin: 0 10px;
+
+        .content__article{
+          margin-bottom: 30px;
+
+          .posted-at{
+            margin: 5px 0 20px 0;
+          }
+  
+          &:after{
+            width: 100%;
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+}

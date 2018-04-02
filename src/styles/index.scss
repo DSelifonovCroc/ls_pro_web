@@ -1,3 +1,14 @@
-body{
-    margin: 100px;
-}
+@import "_vars";
+
+@import "commons";
+
+@import "parts/_user";
+@import "parts/_social_icons";
+@import "parts/_header";
+@import "parts/_footer";
+@import "parts/_slider";
+
+@import "welcome";
+@import "blog";
+@import "works";
+@import "about";

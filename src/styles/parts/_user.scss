@@ -1,0 +1,22 @@
+.user{
+    text-align: center;
+  
+    .user__pic{
+      display: inline-block;
+  
+      .user__pic-img{
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        position: relative;
+        z-index: 50;
+      }
+    }
+  
+    .user__description{
+      .user__name{
+        font-family: roboto-medium;
+        font-size: 28px;
+      }
+    }
+  }

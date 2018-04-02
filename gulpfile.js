@@ -30,6 +30,14 @@ const paths = {
     scripts: {
         src: 'src/scripts/**/*.js',
         dest: 'build/assets/scripts/'
+    },
+    fonts: {
+        src: 'src/fonts/*',
+        dest: 'build/assets/fonts/'
+    },
+    media: {
+        src: 'src/media/**/*.*',
+        dest: 'build/assets/media/'
     }
 }
 
@@ -50,6 +58,12 @@ function styles() {
         .pipe(gulp.dest(paths.styles.dest))
 }
 
+// fonts
+function fonts() {
+    return gulp.src('./src/fonts/*{ttf,woff,woff2,svg,eot}')
+        .pipe(gulp.dest(paths.fonts.dest))
+}
+
 // очистка
 function clean() {
     return del(paths.root);
@@ -68,6 +82,8 @@ function watch() {
     gulp.watch(paths.templates.src, templates);
     gulp.watch(paths.images.src, images);
     gulp.watch(paths.scripts.src, scripts);
+    gulp.watch(paths.fonts.src, fonts);
+    gulp.watch(paths.media.src, media);
 }
 
 // локальный сервер + livereload (встроенный)
@@ -84,13 +100,20 @@ function images() {
         .pipe(gulp.dest(paths.images.dest));
 }
 
+function media() {
+    return gulp.src(paths.media.src)
+        .pipe(gulp.dest(paths.media.dest));
+}
+
 exports.templates = templates;
 exports.styles = styles;
+exports.fonts = fonts;
 exports.clean = clean;
 exports.images = images;
+exports.media = media;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates, images, scripts),
+    gulp.parallel(styles, templates, images, scripts, fonts, media),
     gulp.parallel(watch, server)
 ));

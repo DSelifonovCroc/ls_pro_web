@@ -1,26 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Blog</title>
+    <title>Блог</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <link rel="stylesheet" href="/assets/styles/app.min.css">
+    <link rel="icon" type="image/png" href="/assets/images/fav_forest.png">
+    <link rel="stylesheet" href="/assets/styles/index.min.css">
     <script src="/assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <h1>Blog</h1>
-    <ul>
-      <li>
-        <h2>Article 1</h2>
-        <p>text 1</p>
-      </li>
-      <li>
-        <h2>Article 2</h2>
-        <p>text 2</p>
-      </li>
-    </ul>
+    <div class="container blog-container">
+      <header class="header blog__header"> 
+        <div class="header__top-row">
+          <div class="header-socials">
+            <ul class="socials">
+              <li class="socials__item vk"><a class="socials__item-link" href="#">
+                  <svg class="icon icon-vk" width="30px" height="17px">
+                    <use xlink:href="assets/images/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="socials__item gh"><a class="socials__item-link" href="#">
+                  <svg class="icon icon-gh" width="30px" height="17px">
+                    <use xlink:href="assets/images/sprite.svg#gh"></use>
+                  </svg></a></li>
+              <li class="socials__item in"><a class="socials__item-link" href="#">
+                  <svg class="icon icon-in" width="30px" height="17px">
+                    <use xlink:href="assets/images/sprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+          <div class="header-burger">
+            <button class="burger__btn" type="button">
+              <svg class="icon icon-burger" width="40px" height="35px">
+                <use xlink:href="assets/images/sprite.svg#burger"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="user header__user">
+          <div class="user__pic"><img class="user__pic-img" src="/assets/media/user.jpg"></div>
+        </div>
+        <div class="header__title-row">
+          <h1 class="header__title">Блог</h1>
+          <p class="header__description">Статьи, которые я написал</p>
+          <div class="header__arrow-btn">
+            <button class="header-arrow" type="button">
+              <svg class="header-arrow-svg" width="26px" height="16px" viewbox="0 0 26 16">
+                <use xlink:href="assets/images/sprite.svg#arrow-down"></use>
+              </svg>
+            </button>
+          </div>
+          <svg class="blog__header-svg">
+            <use xlink:href="assets/images/sprite.svg#blog-text"></use>
+          </svg>
+        </div>
+      </header>
+      <main class="blog__content">
+        <svg class="angles-svg">
+          <use xlink:href="assets/images/sprite.svg#bg"></use>
+        </svg>
+        <nav class="content__nav">
+          <ul class="nav__list">
+            <li class="nav__item"> <a class="nav__link" href="#1">Математика — эталон лаконичности</a></li>
+            <li class="nav__item"> <a class="nav__link" href="#2">Самая короткая научная статья</a></li>
+            <li class="nav__item"> <a class="nav__link" href="#3">Бесплатные онлайн-игры, которые обучат вас программировать</a></li>
+          </ul>
+        </nav>
+        <section class="content__article-list">
+          <article class="content__article">
+            <h2 class="article__title" id="1">Математика — эталон лаконичности</h2>
+            <div class="posted-at">12 марта 2017</div>
+            <div class="article__content"><p>Математика — одна из дисциплин, в которых краткость вполне обоснована: математический язык емкий и исчерпывающий, а формулы, схемы и иллюстрации могут оказаться «эффективнее тысячи слов». Однако в 2005 году ученые Джон Конуэй (Johm Conway) и Александр Сойфер (Alexander Soifer) решили написать «самую короткую научную статью по математике в мире».</p> <p>Непосредственно тело статьи состоит из двух слов (и двух иллюстраций — в них содержится ответ на вопрос, поставленный в заглавии). Журнал American Mathematical Monthly поначалу отнесся к оформлению статьи скептически и попросил дописать «хотя бы пару строк». Однако ученые не сдались и аргументировали свою позицию тем, что уважаемый научный журнал не может отказать в публикации, основываясь на том, что предпочитает количество текста его качеству. В итоге — не без прений между авторами статьи и редакцией журнала — материал все-таки был опубликован.</p> <p>Однако, несмотря на лаконичность математического языка, примеров объемных статей и публикаций в математике не меньше, а даже больше. Например, доказательство теоремы Робертсона-Сеймура о минорах графа заняло 500 страниц и более 20 статей (объемным доказательствам теорем даже посвящена отдельная страница в Википедии).</p></div>
+          </article>
+          <article class="content__article">
+            <h2 class="article__title" id="2">Самая короткая научная статья</h2>
+            <div class="posted-at">14 марта 2017</div>
+            <div class="article__content"><p>В 1974 году клинический психолог Деннис Аппер находился в творческом кризисе. Что-то мешало ему сесть и написать требуемую статью. В конце концов, психолог решил провести над собой научный эксперимент в надежде преодолеть «писательский блок». И как чаще всего происходит с экспериментами, попытка ученого окончилась не совсем успешно, вернее - полным крахом.</p> <p>Несмотря на это его статья под названием «Неудачная попытка самостоятельно преодолеть творческий кризис» была опубликована в престижном журнале Journal of Applied Behavioral Analysis. Её содержание было пусто.</p></div>
+          </article>
+          <article class="content__article">
+            <h2 class="article__title" id="3">Бесплатные онлайн-игры, которые обучат вас программировать</h2>
+            <div class="posted-at">17 марта 2017</div>
+            <div class="article__content"><p>CodinGame</p><p>На CodinGame с помощью написания кода и создания собственного «искусственного интеллекта» вам предстоит решить самые разнообразные и весёлые проблемы. Сайт поддерживает все языки программирования.</p><p>Code Combat</p><p>CodeCombat — это платформа для студентов и школьников, позволяющая изучить компьютерные науки, играя в настоящие игры. Красочная анимация и интересный сюжет, кланы, взаимодействие с тысячами других игроков по всему миру — вот что вам предстоит увидеть. Поддерживаются такие языки, как Java, JavaScript, Python, Lua, CoffeeScript. Имеется русская локализация.</p><p>Ruby Warrior</p><p>Если вы хотите изучить Ruby, то Ruby Warrior — то, что вам нужно. Есть два уровня сложности, соответствующих вашим навыкам. Для сохранения своего прогресса придётся залогиниться через Facebook.</p><p>Check iO</p><p>Check iO — это браузерная игра в жанре «Приключение», которая научит вас программировать на Python.</p></div>
+          </article>
+        </section>
+      </main>
+      <footer class="footer-container blog__footer">
+        <div class="sections-row">
+          <div class="credits">
+            <p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. </p>
+          </div>
+          <div class="links">
+            <ul class="links__list">
+              <li class="links__item"><a class="footer-link" href="/my_works.html">Мои работы</a></li>
+              <li class="links__item"><a class="footer-link" href="/about.html">Обо мне</a></li>
+              <li class="links__item"><a class="footer-link" href="/blog.html">Блог</a></li>
+              <li class="links__item"><a class="footer-link" href="/index.html">Авторизация</a></li>
+            </ul>
+            <div class="footer-socials">
+              <ul class="socials">
+                <li class="socials__item vk"><a class="socials__item-link" href="#">
+                    <svg class="icon icon-vk" width="30px" height="17px">
+                      <use xlink:href="assets/images/sprite.svg#vk"></use>
+                    </svg></a></li>
+                <li class="socials__item gh"><a class="socials__item-link" href="#">
+                    <svg class="icon icon-gh" width="30px" height="17px">
+                      <use xlink:href="assets/images/sprite.svg#gh"></use>
+                    </svg></a></li>
+                <li class="socials__item in"><a class="socials__item-link" href="#">
+                    <svg class="icon icon-in" width="30px" height="17px">
+                      <use xlink:href="assets/images/sprite.svg#in"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+          </div>
+          <blockquote class="quote">
+            <p>Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.</p>
+            <footer>— Martin Golding</footer>
+          </blockquote>
+        </div>
+        <div class="author-row">
+          <p>© Дмитрий Селифонов | Создано с любовью в LoftSchool | 2018</p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
