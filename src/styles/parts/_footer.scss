@@ -95,7 +95,7 @@
   }
 }
 
-@media screen and (max-width: 1366px){
+@media (max-width: 1366px){
   .footer-container{
     .sections-row{
       .links{
@@ -110,9 +110,8 @@
 }
 
 // iPad
-@media only screen 
-  and (min-device-width: 667px) 
-  and (max-device-width: 1024px){
+@media (min-width: 667px) 
+  and (max-width: 1024px){
 
   .footer-container{
     .sections-row{
@@ -133,9 +132,7 @@
 }
 
 // iPhone
-@media only screen 
-and (min-device-width: 375px) 
-and (max-device-width : 667px) {
+@media (max-width : 667px) {
   .footer-container{
 
     .sections-row{

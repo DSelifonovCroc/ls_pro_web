@@ -217,6 +217,12 @@
       .contacts-row__content{
         vertical-align: middle;
         padding-left: 10px;
+        color: $dark-font-color-second;
+        text-decoration: none;
+      }
+
+      a.contacts-row__content:hover{
+        text-decoration: underline;
       }
     }
   }
@@ -260,7 +266,7 @@
   }
 }
 
-@media(max-width: 768px){
+@media(max-width: 768px) and (min-width: 668px){
   .about-container .about{
     .about__right .skills-row .skills-row__list .skills-row__item:nth-child(3n+3){
       margin-right: 0;
@@ -316,7 +322,7 @@
 }
 
 // iPhone
-@media (max-width : 667px) {
+@media (max-width: 667px) {
   .about-container{
     .about{
       grid-template-areas: 
@@ -338,7 +344,6 @@
           text-align: center;
         }
       }
-
       .about__right .skills-row .skills-row__list .skills-row__item:nth-child(even){
         margin-right: 0;
       }

@@ -6,19 +6,23 @@ block append variables
     var contacts = [
       {
         type: 'skype', 
-        value: '-'
+        value: '-',
+        link: true
       },
       {
-        type: 'mymail', 
-        value: 'selifonovd@gmail.com'
+        type: 'mailto', 
+        value: 'selifonovd@gmail.com',
+        link: true
       },
       {
-        type: 'myphone', 
-        value: '+7 (925) 204-25-11'
+        type: 'tel', 
+        value: '+7 (925) 204-25-11',
+        link: true
       },
       {
         type: 'mark', 
-        value: 'Москва, ул. Волочаевская, д. 5к1'
+        value: 'Москва, ул. Волочаевская, д. 5к1',
+        link: false
       },
     ]
   -
@@ -96,7 +100,10 @@ block content
               li.contacts__item
                 svg.contacts-row__icon(width="25px" height="25px")
                   use(xlink:href=`assets/images/sprite.svg#${contact['type']}`)
-                span.contacts-row__content #{contact['value']}
+                if contact['link']
+                  a.contacts-row__content(href=`${contact['type']}:${contact['value']}`) #{contact['value']}
+                else 
+                  span.contacts-row__content #{contact['value']}
 
     footer.footer-container.about__footer
       include ../parts/footer
